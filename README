@@ -1,0 +1,16 @@
+afpfs-ng-fork
+==========
+
+What it is
+----------
+This is a fork of afpfs-ng project, an Apple File Protocol (AFP) library.
+
+
+Links :
+------
+ [afpfs-ng](https://sites.google.com/site/alexthepuffin/home)
+
+
+What has been done :
+---------------------
+- Import of afpfs-ng 0.8.1 sources
