@@ -713,7 +713,7 @@ int ml_write(struct afp_volume * volume, const char * path,
 {
 
 	int ret,err=0;
-	int totalwritten = 0;
+	size_t totalwritten = 0;
 	uint64_t sizetowrite, ignored;
 	unsigned char flags = 0;
 	unsigned int max_packet_size=volume->server->tx_quantum;

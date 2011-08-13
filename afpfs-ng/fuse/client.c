@@ -61,8 +61,9 @@ static int start_afpfsd(void)
 			snprintf(filename, PATH_MAX,
 				"/usr/local/bin/%s",AFPFSD_FILENAME);
 			if (access(filename,X_OK)) {
-				snprintf(filename, "/usr/bin/%s",
+				snprintf(filename, sizeof(filename), "/usr/bin/%s",
 					AFPFSD_FILENAME);
+				filename[sizeof(filename) - 1] = 0;
 				if (access(filename,X_OK)) {
 					printf("Could not find server (%s)\n",
 						filename);

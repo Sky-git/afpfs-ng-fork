@@ -196,7 +196,7 @@ int invalid_filename(struct afp_server * server, const char * filename)
 			maxlen=255;
 
 
-	p=filename+1;
+	p=(char *)filename+1;
 	while ((q=strchr(p,'/'))) {
 		if (q>p+maxlen)
 			return 1;

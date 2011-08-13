@@ -197,7 +197,7 @@ static int fuse_open(const char *path, struct fuse_file_info *fi)
 	ret = ml_open(volume,path,flags,&fp);
 
 	if (ret==0) 
-		fi->fh=(void *) fp;
+		fi->fh=(unsigned long) fp;
 
 	return ret;
 }

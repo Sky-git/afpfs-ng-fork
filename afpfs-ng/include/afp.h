@@ -370,7 +370,7 @@ int afp_unmount_all_volumes(struct afp_server * server);
 
 int afp_opendt(struct afp_volume *volume, unsigned short * refnum);
 
-int afp_closedt(struct afp_server * server, unsigned short * refnum);
+int afp_closedt(struct afp_server * server, unsigned short refnum);
 
 int afp_getcomment(struct afp_volume *volume, unsigned int did,
         const char * pathname, struct afp_comment * comment);

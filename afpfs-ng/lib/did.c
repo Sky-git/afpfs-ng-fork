@@ -226,7 +226,7 @@ int get_dirid(struct afp_volume * volume, const char * path,
 
 
 	/* Go to the end of last known entry */
-	p=path+(p-copy);
+	p=(char *)path+(p-copy);
 	p2=p;
 
 	while ((p=strchr(p+1,'/'))) {

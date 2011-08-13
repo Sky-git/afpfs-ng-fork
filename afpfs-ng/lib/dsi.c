@@ -474,7 +474,7 @@ void dsi_getstatus_reply(struct afp_server * server)
 	}
 	server->flags=ntohs(reply1->flags);
 
-	p=(void *)((unsigned int) server->incoming_buffer + sizeof(*reply1));
+	p=(void *)((unsigned long) server->incoming_buffer + sizeof(*reply1));
 	p+=copy_from_pascal(server->server_name,p,AFP_SERVER_NAME_LEN)+1;
 
 	/* Now work our way through the variable bits */
@@ -757,7 +757,7 @@ gotenough:
 		printf("<<< read() of rest of AFP, %d bytes\n",amount_to_read);
 		#endif
 		ret = read(server->fd, (void *)
-		(((unsigned int) server->incoming_buffer)+server->data_read),
+		(((unsigned long) server->incoming_buffer)+server->data_read),
 			amount_to_read);
 		if (ret<0) return -1;
 		if (ret==0) {

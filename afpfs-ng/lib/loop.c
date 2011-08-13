@@ -25,7 +25,7 @@
 static unsigned char exit_program=0;
 
 static pthread_t ending_thread;
-static pthread_t main_thread = NULL;
+static pthread_t main_thread = (pthread_t)NULL;
 
 static int loop_started=0;
 static pthread_cond_t loop_started_condition;

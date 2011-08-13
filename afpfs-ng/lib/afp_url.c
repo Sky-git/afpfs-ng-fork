@@ -33,7 +33,7 @@ static int check_port(char * port)
 static int check_uamname(const char * uam) 
 {
 	char * p;
-	for (p=uam;*p;p++) {
+	for (p=(char *)uam;*p;p++) {
 		if (*p==' ') continue;
 		if ((*p<'A') || (*p>'z')) return -1;
 	}
@@ -188,7 +188,7 @@ int afp_parse_url(struct afp_url * url, const char * toparse, int verbose)
 		return -1;
 
 	}
-	if (p==NULL) p=toparse;
+	if (p==NULL) p=(char *)toparse;
 
 	/* Now split on the first / */
 	if (sscanf(p,"%[^/]/%[^$]",

@@ -168,7 +168,7 @@ int afp_getcomment_reply(struct afp_server *server, char * buf, unsigned int siz
 	return 0;
 }
 
-int afp_closedt(struct afp_server * server, unsigned short * refnum) 
+int afp_closedt(struct afp_server * server, unsigned short refnum) 
 {
 	struct {
 		struct dsi_header dsi_header __attribute__((__packed__));

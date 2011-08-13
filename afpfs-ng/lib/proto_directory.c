@@ -248,6 +248,7 @@ int afp_enumerate_reply(struct afp_server *server, char * buf, unsigned int size
 
 	return 0;
 }
+
 int afp_enumerateext2_reply(struct afp_server *server, char * buf, unsigned int size, void * other) 
 {
 
@@ -266,8 +267,7 @@ int afp_enumerateext2_reply(struct afp_server *server, char * buf, unsigned int 
 	char * p = buf + sizeof(*reply);
 	int i;
 	char  *max=buf+size;
-	struct afp_file_info * filebase = NULL, *filecur=NULL, *new_file=NULL;
-	void ** x = other;
+	struct afp_file_info * filebase = NULL, *filecur = NULL, *new_file = NULL, **x = (struct afp_file_info **) other;
 
 	if (reply->dsi_header.return_code.error_code) {
 		return reply->dsi_header.return_code.error_code;

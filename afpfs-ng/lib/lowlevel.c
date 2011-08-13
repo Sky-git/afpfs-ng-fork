@@ -582,7 +582,7 @@ int ll_getattr(struct afp_volume * volume, const char *path, struct stat *stbuf,
 	if (volume->server->using_version->av_number>=30)
 		stbuf->st_mode |= fp.unixprivs.permissions;
 	else
-		set_nonunix_perms(stbuf,&fp);
+		set_nonunix_perms(&stbuf->st_mode,&fp);
 
 	stbuf->st_uid=fp.unixprivs.uid;
 	stbuf->st_gid=fp.unixprivs.gid;

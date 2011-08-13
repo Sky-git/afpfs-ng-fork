@@ -180,7 +180,7 @@ static int cleartxt_login(struct afp_server *server, char *username, char *passw
 		goto cleartxt_fail;
 
 	p += copy_to_pascal(p, username) + 1;
-	if ((int)p & 0x1)
+	if ((long)p & 0x1)
 		len--;
 	else
 		p++;
@@ -230,7 +230,7 @@ static int cleartxt_passwd(struct afp_server *server,
 		goto cleartxt_fail;
 
 	p += copy_to_pascal(p, username) + 1;
-	if ((int)p & 0x1)
+	if ((long)p & 0x1)
 		len--;
 	else
 		p++;
@@ -580,7 +580,7 @@ static int dhx_login(struct afp_server *server, char *username, char *passwd) {
 	if (ai == NULL)
 		goto dhx_noctx_fail;
 	d += copy_to_pascal(ai, username) + 1;
-	if (((int)d) % 2)
+	if (((long)d) % 2)
 		d++;
 	else
 		ai_len--;
