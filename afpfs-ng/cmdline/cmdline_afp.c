@@ -671,6 +671,8 @@ int com_view (char * arg)
 {
 	unsigned long long amount_written;
 	char filename[AFP_MAX_PATH];
+	struct stat stbuf;
+	
 
 	if ((server==NULL) || (vol==NULL)) {
 		printf("You're not connected yet to a volume\n");
@@ -682,7 +684,7 @@ int com_view (char * arg)
 		goto error;
 	}
 	printf("Viewing: %s\n",filename);
-	retrieve_file(filename,fileno(stdout),1,NULL, &amount_written);
+	retrieve_file(filename, fileno(stdout), 1, &stbuf, &amount_written);
 	return 0;
 error:
 	return -1;

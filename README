@@ -13,5 +13,6 @@ Links :
 
 What has been done :
 ---------------------
+- Fix of various issues on command line client
 - Integration of patches from Red Hat RPM
 - Import of afpfs-ng 0.8.1 sources
