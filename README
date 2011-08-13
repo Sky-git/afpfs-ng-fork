@@ -13,6 +13,7 @@ Links :
 
 What has been done :
 ---------------------
-- Fix of various issues on command line client
-- Integration of patches from Red Hat RPM
 - Import of afpfs-ng 0.8.1 sources
+- Integration of patches from Red Hat RPM
+- Fix of various issues on command line client
+- More debug information (DSI Transport layer)

@@ -759,18 +759,35 @@ gotenough:
 		ret = read(server->fd, (void *)
 		(((unsigned long) server->incoming_buffer)+server->data_read),
 			amount_to_read);
-		if (ret<0) return -1;
+		if (ret<0) {
+			#ifdef DEBUG_DSI
+			printf("<<< read(), couldn't read the buffer, trying to read %d bytes\n",amount_to_read);
+			perror("read()");
+			#endif
+			return -1;
+		}
 		if (ret==0) {
+			#ifdef DEBUG_DSI
+			printf("<<< read(), read nothing\n");
+			#endif
 			return -1;
 		}
 		server->stats.rx_bytes+=ret;
 		server->data_read+=ret;
 
-		if (server->data_read<(ntohl(header->length)+sizeof(*header)))
+		if (server->data_read<(ntohl(header->length)+sizeof(*header))) {
+			#ifdef DEBUG_DSI
+			printf("<<< read(), done reading\n");
+			#endif
 			return 0;
+		}
 	}
-	if (runt_packet) 
+	if (runt_packet)  {
+		#ifdef DEBUG_DSI
+		printf("<<< read(), runt packet\n");
+		#endif
 		goto after_processing;
+	}
 
 process_packet:
 	/* At this point, we have a full DSI packet

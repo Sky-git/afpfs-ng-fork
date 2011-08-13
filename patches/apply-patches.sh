@@ -10,3 +10,6 @@ patch -p0 <afpfs-ng-0.8.1-pointer.patch
 
 # Segmentation fault in command line client
 patch -p0 <afpfs-ng-0.8.1-segfault.patch
+
+# More debug on DSI transport layer
+patch -p0 <afpfs-ng-0.8.1-dsi-debug.patch
