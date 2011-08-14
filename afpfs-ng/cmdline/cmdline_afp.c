@@ -417,7 +417,7 @@ int com_chmod(char * arg)
 	}
 
 	if (sscanf(modestring,"%o",&mode)!=1) {
-		printf("Mode of %s isn't octal\n");
+		printf("Mode of %s isn't octal\n", server_fullname);
 		goto error;
 	}
 
