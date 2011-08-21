@@ -1,0 +1,11 @@
+--- afpfs-ng-0.8.1/cmdline/cmdline_afp.c.filelist	2011-08-21 22:16:39.000000000 +0200
++++ afpfs-ng-0.8.1/cmdline/cmdline_afp.c	2011-08-21 22:17:19.000000000 +0200
+@@ -174,7 +174,7 @@
+ 
+ 	strftime(datestr,DATE_LEN,"%F %H:%M", mtime);
+ 
+-	printf("%s %6lld %s %s\n",mode_str,p->size,datestr,p->name);
++	printf("%s %9lld %s %s\n",mode_str,p->size,datestr,p->name);
+ 
+ }
+ 

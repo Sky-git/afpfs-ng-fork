@@ -174,7 +174,7 @@ static void print_file_details(struct afp_file_info * p)
 
 	strftime(datestr,DATE_LEN,"%F %H:%M", mtime);
 
-	printf("%s %6lld %s %s\n",mode_str,p->size,datestr,p->name);
+	printf("%s %9lld %s %s\n",mode_str,p->size,datestr,p->name);
 
 }
 
