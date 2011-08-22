@@ -9,7 +9,6 @@ static int getstatus(char * address_string, unsigned int port)
 {
 
         struct afp_server *server;
-        struct hostent *h;
         int ret;
         struct sockaddr_in address;
 	int j, firsttime=0;
@@ -104,6 +103,6 @@ int main(int argc, char * argv[])
 	afp_main_quick_startup(NULL);
 
 	if (getstatus(servername,port) == 0) {
-
+		return 0;
 	} else return -1;
 }

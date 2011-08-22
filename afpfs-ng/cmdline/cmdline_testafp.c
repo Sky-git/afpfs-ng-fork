@@ -42,7 +42,7 @@ static int test_one_url(char * url_string,
 	return 0;
 }
 
-int test_urls(void)
+int test_urls(char * ignore)
 {
 
 	printf("Testing URL parsing\n");

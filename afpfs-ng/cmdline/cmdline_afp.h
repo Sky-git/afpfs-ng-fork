@@ -27,6 +27,7 @@ int com_disconnect(char * arg);
 
 void cmdline_afp_exit(void);
 
+int cmdline_afp_setup_client(void);
 int cmdline_afp_setup(int recursive, char * url_string);
 
 #endif

@@ -1149,7 +1149,6 @@ static void * cmdline_server_startup(int recursive)
 	if (server_subconnect()) goto error;
 
 	if (strlen(url.volumename)==0) {
-		int i;
 		char names[1024];
 		afp_list_volnames(server,names,1024);
 		printf("Specify a volume with 'cd volume'. Choose one of: %s\n",
